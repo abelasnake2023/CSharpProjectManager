@@ -169,10 +169,38 @@ public class UMain
             AfterDoll += str + "\n";
         }
     }
-    public static void SLReadLine()
+    public static string SLReadLine()
     {
         AfterDoll = Console.ReadLine();
+        return AfterDoll;
     }
+    public static string ReadPassword()
+    {
+        // Use a StringBuilder to store the password characters
+        var passwordBuilder = new System.Text.StringBuilder();
+
+        ConsoleKeyInfo key;
+        do
+        {
+            key = Console.ReadKey(true); // true means don't display the pressed key
+
+            if (key.Key == ConsoleKey.Backspace && passwordBuilder.Length > 0)
+            {
+                passwordBuilder.Remove(passwordBuilder.Length - 1, 1);
+            }
+            else if (key.Key != ConsoleKey.Enter)
+            {
+                passwordBuilder.Append(key.KeyChar);
+            }
+        } while (key.Key != ConsoleKey.Enter);
+
+        AfterDoll = passwordBuilder.ToString();
+        passwordBuilder.Clear();
+
+        Console.WriteLine();
+        return AfterDoll;
+    }
+
 
 
     public static void PrintBefDol(string str)

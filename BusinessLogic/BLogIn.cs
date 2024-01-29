@@ -27,7 +27,7 @@ namespace CSharpProjectManager.BusinessLogic
                 return false;
             }
 
-            bool valid = DLogIn.ValidUser(username, password, out reason);
+            bool valid = DLogIn.ValidManager(username, password, out reason);
 
             return valid;
         }

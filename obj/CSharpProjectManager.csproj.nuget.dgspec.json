@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProjectManager\\CSharpProjectManager.csproj": {}
+    "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProject\\CSharpProjectManager\\CSharpProjectManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProjectManager\\CSharpProjectManager.csproj": {
+    "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProject\\CSharpProjectManager\\CSharpProjectManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProjectManager\\CSharpProjectManager.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProject\\CSharpProjectManager\\CSharpProjectManager.csproj",
         "projectName": "CSharpProjectManager",
-        "projectPath": "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProjectManager\\CSharpProjectManager.csproj",
+        "projectPath": "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProject\\CSharpProjectManager\\CSharpProjectManager.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProjectManager\\obj\\",
+        "outputPath": "C:\\Users\\user\\Documents\\C#\\C# Code\\CSharpProject\\CSharpProjectManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             }
           },
           "imports": [

@@ -15,7 +15,7 @@ public class DLogIn
 
     }
 
-    public static bool ValidUser(string username, string password, out string reason)
+    public static bool ValidManager(string username, string password, out string reason)
     {
         object[,] param = new object[2, 3]
         {
@@ -26,7 +26,7 @@ public class DLogIn
         try
         {
             ALibDataReader reader = new ALibDataReader();
-            object[,]result = reader.ExecuteTableValuedFunction("SearchManager", "*", param);
+            object[,]result = reader.ExecuteTableValuedFunction("SearchManager", "*", param, 15);
 
             reason = (string)result[0, 1];
             return (bool)result[0, 0];
