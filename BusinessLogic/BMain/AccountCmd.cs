@@ -1,21 +1,31 @@
 ﻿namespace CSharpProjectManager.BusinessLogic.BMain;
 
-public class UserCmd
+
+
+using System;
+
+
+
+public class AccountCmd
 {
     private static string[] allKeyWord;
     private string[] splitedCmd;
     private string[] allComb;
     private string[] splitedCmdOutput;
 
-    static UserCmd()
+    static AccountCmd()
     {
         allKeyWord = new string[100];
 
-        allKeyWord[0] = "postvideo"; //post video
-        allKeyWord[1] = "deletevideo"; //delete video
+
+
+        allKeyWord[0] = "create"; //create
+        allKeyWord[1] = "del"; //delete
+        allKeyWord[2] = "alt"; //update
+        allKeyWord[3] = "view"; //view
     }
 
-    public UserCmd(string[] allCmd, string[] allComb)
+    public AccountCmd(string[] allCmd, string[] allComb)
     {
         this.splitedCmd = allCmd;
         this.splitedCmdOutput = new string[splitedCmd.Length];
@@ -67,6 +77,14 @@ public class UserCmd
         else if (i == 1)
         {
             ExecAccountCmd.Del(singleCmd);
+        }
+        else if (i == 2)
+        {
+            ExecAccountCmd.Alt(singleCmd);
+        }
+        else if (i == 3)
+        {
+            ExecAccountCmd.View(singleCmd);
         }
     }
 }

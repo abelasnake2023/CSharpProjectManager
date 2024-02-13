@@ -22,7 +22,7 @@ public class RespondBefDoll
 
     public void ChangeTextBefDol()
     {
-        if(allCmds.Length == 2)
+        if(allCmds.Length == 2 || allCmds.Length == 1)
         {
             if (allCmds[0] == "cd" && allCmds[1] == "manager")
             {
@@ -47,6 +47,10 @@ public class RespondBefDoll
             else if (allCmds[0] == "cd" && allCmds[1] == "..")
             {
                 UMain.BeforeDoll = $"{ManagerCmd.Username}@SHEBA:/$";
+            }
+            else if (allCmds[0] == "clear" && allCmds.Length == 1)
+            {
+                Console.Clear();
             }
         }
     }

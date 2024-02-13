@@ -15,6 +15,7 @@ public class RespondAftDoll
     private List<string> cmdCombiner;
 
     private ManagerCmd managerCmd;
+    private AccountCmd accCmd;
     private UserCmd userCmd;
 
 
@@ -81,11 +82,13 @@ public class RespondAftDoll
         }
         else if(UMain.BeforeDoll == $"{ManagerCmd.Username}@SHEBA:/user$")
         {
-
+            accCmd = new AccountCmd(GetAllSCmd(), GetAllCmdComb());
+            accCmd.StartExecCmd();
         }
         else if (UMain.BeforeDoll == $"{ManagerCmd.Username}@SHEBA:/app$")
         {
-
+            userCmd = new UserCmd(GetAllSCmd(), GetAllCmdComb());
+            userCmd.StartExecCmd();
         }
         else if (UMain.BeforeDoll == $"{ManagerCmd.Username}@SHEBA:/bank$")
         {

@@ -7,31 +7,27 @@ using CSharpProjectManager.Database.DMain;
 using CSharpProjectManager.UI;
 using ALib.Networking;
 using System.Drawing;
-using System.Windows.Forms;
 using ALibWinForms.Ui;
-using System.Linq.Expressions;
-using System.Xml.Serialization;
+
+
 
 public class ExecManagerCmd
 {
-    public static string[] Create(string cmd) // Implementation for creating
+    public static void Create(string cmd) // Implementation for creating
     {
-        string[] output = new string[1] { "Valid Password" };
-
         string password = cmd.Substring(cmd.IndexOf('$') + 1);
         if(password != ManagerCmd.Password)
         {
-            output[0] = "Invalid Password!";
-            return output;
+            UMain.NLAftPrintAftDol("Incorrect Password!");
         }
-
-        ExecuteCreateCmd();
-        
-        return output;
+        else
+        {
+            ExecuteCreateCmd();
+        }
     }
-    public static bool ExecuteCreateCmd()
+    private static bool ExecuteCreateCmd()
     {
-        object[] args = new object[21];
+        object[] args = new object[22];
         bool isValid = false;
 
         UMain.NLBefAftPrintAftDol("Press `q`/`Q` to exit!", 2, 2);
@@ -235,10 +231,11 @@ public class ExecManagerCmd
         UMain.NLBefAftPrintAftDol("_________________________________________________________________________");
         UMain.OnlyPrintAftDol("Phone Number: ");
         isValid = false;
+        string phoneNumProperFormat = "";
         while (!isValid)
         {
             args[10] = UMain.SLReadLine().Trim();
-            isValid = Validity.IsEthPhoneNumber(args[10].ToString().Trim());
+            isValid = Validity.IsEthPhoneNumber(args[10].ToString().Trim(), out phoneNumProperFormat);
             if (args[10].ToString().Trim() == "q" || args[10].ToString().Trim() == "Q")
             {
                 return false;
@@ -249,6 +246,7 @@ public class ExecManagerCmd
             }
             else
             {
+                args[10] = phoneNumProperFormat.Trim();
                 isValid = true;
             }
         }
@@ -770,12 +768,12 @@ public class ExecManagerCmd
         }
         else
         {
-            args[4] = null;
+            args[4] = -1;
         }
 
 
-
-
+        //Assign it's manager Id for the new manager
+        args[21] = DManagerCmd.GetManagerIdByUserName(ManagerCmd.Username);
 
 
 

@@ -13,7 +13,6 @@ public class ManagerCmd
     private string[] splitedCmd;
     private string[] allComb;
     private string[] splitedCmdOutput;
-    private string whyCommandInvalid;
 
 
 
@@ -67,7 +66,6 @@ public class ManagerCmd
         this.splitedCmd = allCmd;
         this.splitedCmdOutput = new string[splitedCmd.Length];
         this.allComb = allComb;
-        whyCommandInvalid = "Command Valid!";
     }
 
 
@@ -90,7 +88,7 @@ public class ManagerCmd
         bool invalidCmd = false;
 
 
-        for(int i = 0; i < this.splitedCmd.Length; i++)
+        for (int i = 0; i < this.splitedCmd.Length; i++)
         {
             RespondSingleCmd(splitedCmd[i]);
         }
@@ -104,7 +102,6 @@ public class ManagerCmd
 
         if (iniKwordLen < 0) 
         {
-            whyCommandInvalid = "Invalid command";
             return false;
         }
 

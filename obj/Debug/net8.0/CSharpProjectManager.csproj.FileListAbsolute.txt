@@ -77,3 +77,6 @@ C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\
 C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\net8.0\System.DirectoryServices.xml
 C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\net8.0\System.Runtime.Remoting.xml
 C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\net8.0\System.EnterpriseServices.Wrapper.dll
+C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\net8.0\Guna.UI2.dll
+C:\Users\user\Documents\C#\C# Code\CSharpProject\CSharpProjectManager\bin\Debug\net8.0\System.Management.dll
